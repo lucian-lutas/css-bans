@@ -3,7 +3,7 @@
     "scripts": {
         "dev": "vite",
         "build": "vite build",
-        "vercel-build": "composer install --no-dev --optimize-autoloader && php artisan migrate --force && npm run build"
+        "vercel-build": "php -r \"copy('https://getcomposer.org/installer','composer-setup.php');\" && php composer-setup.php --install-dir=/tmp --filename=composer && /tmp/composer install --no-dev --optimize-autoloader && php artisan migrate --force && npm run build"
     },
     "devDependencies": {
         "axios": "^0.27",
